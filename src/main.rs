@@ -49,7 +49,9 @@ fn setup_scene(
         // 1) Build or load your desired CSG shape
         //------------------------------------------------------
         // Example: build a simple cube of size 2.0 x 2.0 x 2.0
-        let csg_shape = CSG::cube(2.0, 2.0, 2.0, None).center();
+        let cube = CSG::cube(2.0, 2.0, 2.0, None).center();
+        let sphere = CSG::sphere(1.3, 16, 8, None);
+        let csg_shape = cube.difference(&sphere);
     
         // Optionally transform, union, difference, etc. For instance:
         // let sphere = CSG::sphere(1.0, 16, 8, None);
