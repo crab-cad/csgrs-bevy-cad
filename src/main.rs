@@ -1,7 +1,6 @@
-//! A simple scene to demonstrate picking events for UI and mesh entities.
-
 use std::f32::consts::PI;
 use csgrs::csg::CSG;
+use bevy_editor_pls::prelude::*;
 
 #[cfg(not(target_arch = "wasm32"))]
 use bevy::pbr::wireframe::{WireframeConfig, WireframePlugin};
@@ -20,9 +19,10 @@ fn main() {
         .add_plugins((
             DefaultPlugins.set(ImagePlugin::default_nearest()),
             MeshPickingPlugin,
-            #[cfg(not(target_arch = "wasm32"))]
-            WireframePlugin,
+            //#[cfg(not(target_arch = "wasm32"))]
+            //WireframePlugin,
         ))
+        .add_plugins(EditorPlugin::default())
         .add_systems(Startup, setup_scene)
         .add_systems(
             Update,

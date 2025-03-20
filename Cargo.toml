@@ -5,4 +5,8 @@ edition = "2024"
 
 [dependencies]
 bevy = "0.15.3"
+bevy_editor_pls = { git = "https://github.com/ActuallyHappening/bevy_editor_pls" }
 csgrs = "0.16.0"
+
+[patch.crates-io]
+transform-gizmo-bevy = { git = "https://github.com/ActuallyHappening/transform-gizmo" }
