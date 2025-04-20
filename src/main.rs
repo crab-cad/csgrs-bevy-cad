@@ -1,7 +1,6 @@
 use bevy::{asset::RenderAssetUsages, color::palettes::tailwind::*, prelude::*, render::mesh::{Indices, PrimitiveTopology}};
 use csgrs::csg::CSG;
 use transform_gizmo_bevy::{prelude::*, GizmoHotkeys};
-use nalgebra::{Matrix4, Vector3, UnitQuaternion};
 
 
 const CSG_OFFSET_VALUE: f32 = 0.0;
@@ -59,7 +58,7 @@ fn setup_scene(
     mut materials: ResMut<Assets<StandardMaterial>>,
 ) {
     let white_matl = materials.add(Color::WHITE);
-    let ground_matl = materials.add(Color::from(GRAY_300));
+    let ground_matl = materials.add(Color::Srgba(GRAY_300));
 
     // Spawn CSG Shapes
     let cube_csg = CSG::cube(CUBE_SIZE, CUBE_SIZE, CUBE_SIZE, None).center();
@@ -130,7 +129,7 @@ fn respawn_combined_csg_when_cube_moved(
     mut commands: Commands,
     csg_shape_query: Query<(Entity, &Name, &mut Transform, &mut CSGShape, &Mesh3d)>,
 ) {
-    for (entity, name, transform, mut csg_shape, mesh_handle) in csg_shape_query.iter() {
+    for (entity, name, transform, mut _csg_shape, _mesh_handle) in csg_shape_query.iter() {
         if name.as_str() == "CSG Combined" {
             commands.entity(entity).despawn();
         }
