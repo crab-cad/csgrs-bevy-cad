@@ -8,10 +8,9 @@ rust-version = "1.85.0"
 build-override = { opt-level = 2 }
 
 [dependencies]
-csgrs = "0.16.0"
 bevy = { version = "0.15.3", features = ["animation", "bevy_gilrs", "bevy_gizmos", "bevy_gltf", "bevy_mesh_picking_backend", "bevy_state", "bevy_ui", "bevy_winit", "custom_cursor", "default_font", "hdr", "multi_threaded", "smaa_luts", "sysinfo_plugin", "tonemapping_luts", "vorbis", "webgl2", "x11"], default-features = false }
 bevy_editor_cam = "0.5"
-nalgebra = "0.33.2"
+csgrs = "0.16.0"
 transform-gizmo-bevy = "0.5.0"
 log = { version = "*", features = ["max_level_debug", "release_max_level_warn"] }
 
