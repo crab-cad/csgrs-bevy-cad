@@ -1,4 +1,4 @@
-# csgrs-bevy-example
+# csgrs-bevy-cad
 
 ![Viewer Screenshot](doc/screenshot.png)
 
